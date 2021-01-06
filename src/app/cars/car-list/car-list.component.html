@@ -1,0 +1,9 @@
+<h2>Liste de voitures</h2>
+<button (click)="affcars()">Afficher</button>
+<div *ngIf="afficherCars">
+	<ul class="carList">
+		<li *ngFor="let car of cars" (click)="onSelect(car)" [class.selected]="car===selectedCar">
+			<span class="badge">{{car.id}}</span> {{car.brand}}
+		</li>
+	</ul>
+</div>
